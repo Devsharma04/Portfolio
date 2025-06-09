@@ -3,6 +3,30 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --shadow-blink-faulty: 0 0 8px currentColor;
+  --animate-blink-faulty: blink-faulty 1.2s infinite ease-in-out;
+
+  /* Define the keyframes */
+  @keyframes blink-faulty {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    40% {
+      opacity: 0.2;
+    }
+    60% {
+      opacity: 0.9;
+    }
+    70% {
+      opacity: 0.1;
+    }
+    80% {
+      opacity: 0.7;
+    }
+  }
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -118,5 +142,20 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+/* Hide scrollbar during loading screen */
+html {
+  overflow: hidden;
+}
+
+/* Show scrollbar after loading animation completes (after 3 seconds) */
+html {
+  animation: showScroll 0s ease-in-out 3s forwards;
+}
+
+@keyframes showScroll {
+  to {
+    overflow: auto;
   }
 }
