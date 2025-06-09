@@ -69,13 +69,13 @@ export default function Home() {
             </div>
           </section>
           <section className="h-screen w-full">
-            <h2 className="text-7xl text-white text-center mb-8">Skills</h2>
+            <h2 className="text-5xl text-white text-center mb-8">Skills</h2>
             <div className="flex max-w-5xl mx-auto items-center flex-wrap justify-center gap-12">
               {logos.map((item, index) => (
                 <div key={index} className="flex flex-col items-center ">
-                  <div className="flex items-center justify-center w-34 h-34 mb-2">
+                  <div className="flex items-center justify-center w-20 h-20 mb-2">
                     <img
-                      className="filter grayscale hover:grayscale-0 hover:scale-110 transition duration-300 max-h-20 max-w-20 object-contain"
+                      className="filter grayscale hover:grayscale-0 hover:scale-110 transition duration-300 max-h-10 max-w-10 object-contain"
                       src={item.src}
                       alt={item.alt}
                     />
