@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -31,7 +31,7 @@ export default function Home() {
           style={{ overflow: "hidden" }}
         >
           <div className="text-center">
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 font-mono">
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 font-mono ">
               Hello World
               <span className="text-green-400 ml-2 animate-ping">|</span>
             </h1>
@@ -44,17 +44,16 @@ export default function Home() {
           <section className="h-screen bg-neutral-950 w-full px-16">
             <BackgroundBeams />
             <div className="h-full flex flex-col gap-6 justify-center ">
-              <h1 className="text-7xl text-neutral-200">Hi There</h1>
-              <h1 className="text-7xl text-neutral-200">
-                I'm{" "}
+              <h1 className="text-7xl text-neutral-200">I'm Dev Sharma</h1>
+              <p className="text-2xl text-neutral-200">
+                I am a{" "}
                 <span className="text-red-500 animate-(--animate-blink-faulty) shadow-[--shadow-blink-faulty]">
-                  Dev
+                  Web
                 </span>{" "}
                 <span className="text-blue-500 animate-(--animate-blink-faulty) delay-[300ms] shadow-[--shadow-blink-faulty]">
-                  Sharma
+                  Developer
                 </span>
-              </h1>
-              <p className="text-2xl text-neutral-200">I am a Web Developer</p>
+              </p>
 
               <a>About Me</a>
 
@@ -69,13 +68,13 @@ export default function Home() {
             </div>
           </section>
           <section className="h-screen w-full">
-            <h2 className="text-5xl text-white text-center mb-8">Skills</h2>
+            <h2 className="text-6xl text-white text-center mb-8">Skills</h2>
             <div className="flex max-w-5xl mx-auto items-center flex-wrap justify-center gap-12">
               {logos.map((item, index) => (
                 <div key={index} className="flex flex-col items-center ">
                   <div className="flex items-center justify-center w-20 h-20 mb-2">
                     <img
-                      className="filter grayscale hover:grayscale-0 hover:scale-110 transition duration-300 max-h-10 max-w-10 object-contain"
+                      className="filter grayscale hover:grayscale-0 hover:scale-125 transition duration-300 max-h-10 max-w-10 object-contain"
                       src={item.src}
                       alt={item.alt}
                     />

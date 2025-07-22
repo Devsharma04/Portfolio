@@ -39,4 +39,14 @@ export const logos = [
     src: "/logos/mongodb.png",
     title: "MongoDB",
   },
+  {
+    id: 9,
+    src: "/logos/nextjs.png",
+    title: "Nextjs",
+  },
+  {
+    id: 10,
+    src: "/logos/typescript.png",
+    title: "Typescript",
+  },
 ];
