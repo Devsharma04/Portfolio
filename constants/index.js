@@ -50,3 +50,18 @@ export const logos = [
     title: "Typescript",
   },
 ];
+
+export const projects = [
+  {
+    title: "Ai Resume Builder",
+    image: "/projects/ai-resume.png",
+    description: "My personal portfolio built with Next.js and Tailwind CSS.",
+    link: "https://ai-resume-builder-swart-delta.vercel.app/",
+  },
+  {
+    title: "Job Portal",
+    image: "/projects/job-dekho.png",
+    description: "Full-stack e-commerce app with payment integration.",
+    link: "https://jobdekho-dusky.vercel.app/",
+  },
+];
