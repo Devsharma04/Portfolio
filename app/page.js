@@ -360,7 +360,7 @@ export default function Home() {
                     className="group flex flex-col items-center p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-neutral-900/50 to-neutral-800/30 backdrop-blur-sm border border-neutral-700/30 hover:border-purple-500/50 transition-all duration-300 cursor-pointer"
                   >
                     <div className="relative flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mb-3 sm:mb-4 overflow-hidden rounded-xl bg-neutral-800/50">
-                      <img
+                      <Image
                         className="max-w-8 max-h-8 sm:max-w-10 sm:max-h-10 lg:max-w-12 lg:max-h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
                         src={item.src}
                         alt={item.alt}
