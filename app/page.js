@@ -315,11 +315,18 @@ export default function Home() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                 About Me
               </h2>
-              <p className="text-lg sm:text-xl lg:text-2xl text-neutral-300 leading-relaxed">
+              <p className="text-neutral-400 text-base sm:text-lg">
                 I&apos;m a dedicated web developer with a strong foundation in
                 JavaScript, React, and modern front-end ecosystems. My approach
                 to development blends clean UI/UX with functional backend logic,
                 ensuring seamless user experiences.
+              </p>
+              <p className="text-neutral-400 text-base sm:text-lg">
+                While learning, I also explored Next.js, which has become a core
+                part of my workflow for building full-stack web apps. I&apos;m
+                currently assisting a startup in building their platform from
+                the ground up, applying real-world skills in a collaborative
+                environment.
               </p>
               <p className="text-neutral-400 text-base sm:text-lg">
                 Currently focused on building portfolio projects and
@@ -362,6 +369,8 @@ export default function Home() {
                     <div className="relative flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mb-3 sm:mb-4 overflow-hidden rounded-xl bg-neutral-800/50">
                       <Image
                         className="max-w-8 max-h-8 sm:max-w-10 sm:max-h-10 lg:max-w-12 lg:max-h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                        width={32}
+                        height={32}
                         src={item.src}
                         alt={item.alt}
                       />

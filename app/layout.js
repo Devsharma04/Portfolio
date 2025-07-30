@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import { ReactLenis } from "@/utils/lenis";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,7 +22,19 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ReactLenis
+          root
+          options={{
+            lerp: 0.075, // Lower value = smoother scroll (default is 0.1)
+            duration: 1.7, // Slightly longer duration for smoother feel
+            smoothWheel: true,
+            wheelMultiplier: 0.7, // Reduce wheel sensitivity for smoother scrolling
+            touchMultiplier: 1.5,
+            infinite: false,
+          }}
+        >
+          {children}
+        </ReactLenis>
       </body>
     </html>
   );
