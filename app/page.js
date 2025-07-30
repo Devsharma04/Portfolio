@@ -10,6 +10,13 @@ import Image from "next/image";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
+const ANIMATION_CONFIG = {
+  loading: { duration: 1, ease: "power2.inOut" },
+  circles: { duration: 8, ease: "power2.inOut" },
+  skills: { duration: 0.6, ease: "back.out(1.7)" },
+  projects: { duration: 0.8, ease: "power3.out" },
+  hover: { duration: 0.3, ease: "power2.out" },
+};
 
 export default function Home() {
   // Refs for different sections
@@ -22,13 +29,6 @@ export default function Home() {
   const projectItemsRef = useRef([]);
 
   // Optimized animation configurations
-  const ANIMATION_CONFIG = {
-    loading: { duration: 1, ease: "power2.inOut" },
-    circles: { duration: 8, ease: "power2.inOut" },
-    skills: { duration: 0.6, ease: "back.out(1.7)" },
-    projects: { duration: 0.8, ease: "power3.out" },
-    hover: { duration: 0.3, ease: "power2.out" },
-  };
 
   // Optimized hover handlers
   const createHoverHandlers = useCallback((element, isSkill = false) => {
@@ -316,7 +316,7 @@ export default function Home() {
                 About Me
               </h2>
               <p className="text-lg sm:text-xl lg:text-2xl text-neutral-300 leading-relaxed">
-                I'm a dedicated web developer with a strong foundation in
+                I&apos;m a dedicated web developer with a strong foundation in
                 JavaScript, React, and modern front-end ecosystems. My approach
                 to development blends clean UI/UX with functional backend logic,
                 ensuring seamless user experiences.
