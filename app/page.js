@@ -268,7 +268,7 @@ export default function Home() {
             <BackgroundBeams />
             <div className="h-full max-w-7xl mx-auto flex flex-col gap-6 justify-center">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl text-neutral-200 font-bold">
-                I'm Dev Sharma
+                Dev Sharma
               </h1>
               <p className="text-lg sm:text-xl lg:text-2xl text-neutral-200">
                 I am a{" "}
