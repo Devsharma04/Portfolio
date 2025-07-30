@@ -65,13 +65,15 @@ export const projects = [
   {
     title: "Ai Resume Builder",
     image: "/projects/ai-resume.png",
-    description: "My personal portfolio built with Next.js and Tailwind CSS.",
+    description:
+      "Ai resume builder using clerk for auth. Backend is hosted on Render (free tier), so it may experience cold starts.",
     link: "https://ai-resume-builder-swart-delta.vercel.app/",
   },
   {
     title: "Job Portal",
     image: "/projects/job-dekho.png",
-    description: "Full-stack e-commerce app with payment integration.",
+    description:
+      "Full-stack Job portal with employee and recruiter dashboard. Backend is hosted on Render (free tier), so it may experience cold starts.",
     link: "https://jobdekho-dusky.vercel.app/",
   },
 ];

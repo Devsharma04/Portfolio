@@ -448,20 +448,6 @@ export default function Home() {
                         {project.description}
                       </p>
 
-                      {/* Tech stack indicators */}
-                      <div className="flex flex-wrap gap-2 pt-2">
-                        {["React", "TypeScript", "Tailwind"]
-                          .slice(0, 3)
-                          .map((tech, techIndex) => (
-                            <span
-                              key={techIndex}
-                              className="px-2 py-1 text-xs bg-neutral-800/50 text-neutral-300 rounded-md border border-neutral-700/50"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                      </div>
-
                       <div className="flex items-center justify-between pt-4">
                         <a
                           href={project.link}
