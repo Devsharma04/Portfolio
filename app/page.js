@@ -280,11 +280,14 @@ export default function Home() {
                 </span>
               </p>
               <div className="flex gap-4">
-                <a href="#" className="group">
-                  <Linkedin className="w-6 sm:w-8 text-neutral-300 h-6 sm:h-8 group-hover:text-blue-500 transition-colors duration-300" />
+                <a
+                  href="https://www.linkedin.com/in/dev-sharma-a31748232/"
+                  className="group"
+                >
+                  <Linkedin className="w-6 sm:w-8 text-neutral-300 h-6 sm:h-8 group-hover:text-blue-500 transition-colors duration-300 cursor-pointer" />
                 </a>
-                <a href="#" className="group">
-                  <Github className="w-6 sm:w-8 text-neutral-300 h-6 sm:h-8 group-hover:text-white transition-colors duration-300" />
+                <a href="https://github.com/Devsharma04" className="group">
+                  <Github className="w-6 sm:w-8 text-neutral-300 h-6 sm:h-8 group-hover:text-white transition-colors duration-300 cursor-pointer" />
                 </a>
               </div>
             </div>
