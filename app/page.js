@@ -284,10 +284,10 @@ export default function Home() {
                   href="https://www.linkedin.com/in/dev-sharma-a31748232/"
                   className="group"
                 >
-                  <Linkedin className="w-6 sm:w-8 text-neutral-300 h-6 sm:h-8 group-hover:text-blue-500 transition-colors duration-300 cursor-pointer" />
+                  <Linkedin className="w-6 sm:w-8 text-neutral-300 h-6 sm:h-8 cursor-pointer z" />
                 </a>
                 <a href="https://github.com/Devsharma04" className="group">
-                  <Github className="w-6 sm:w-8 text-neutral-300 h-6 sm:h-8 group-hover:text-white transition-colors duration-300 cursor-pointer" />
+                  <Github className="w-6 sm:w-8 text-neutral-300 h-6 sm:h-8 cursor-pointer" />
                 </a>
               </div>
             </div>
