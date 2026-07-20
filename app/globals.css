@@ -141,21 +141,48 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#050508] text-neutral-200;
+  }
+  html {
+    scroll-behavior: smooth;
   }
 }
-/* Hide scrollbar during loading screen */
-html {
-  overflow: hidden;
+
+/* Custom utilities for the new layout */
+.bg-dot-grid {
+  background-size: 28px 28px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
 }
 
-/* Show scrollbar after loading animation completes (after 3 seconds) */
-html {
-  animation: showScroll 0s ease-in-out 3s forwards;
+.bg-spotlight {
+  background: radial-gradient(
+    700px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(147, 51, 234, 0.08) 0%,
+    rgba(59, 130, 246, 0.03) 40%,
+    transparent 80%
+  );
 }
 
-@keyframes showScroll {
-  to {
-    overflow: auto;
-  }
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
 }
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a24;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a38;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

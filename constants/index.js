@@ -63,33 +63,24 @@ export const logos = [
 
 export const projects = [
   {
-    title: "Ai Resume Builder",
-    image: "/projects/ai-resume.png",
-    description:
-      "Ai resume builder using clerk for auth. Backend is hosted on Render (free tier), so it may experience cold starts.",
-    link: "https://ai-resume-builder-swart-delta.vercel.app/",
+    title: "Parnika International",
+    description: "A premium export platform for Indian groceries, authentic spices, and FMCG brands, enabling seamless global trade.",
+    image: "/projects/parnika.png",
+    link: "https://www.parnikainternational.com/",
   },
+ 
   {
-    title: "Celebrino",
-    description:
-      "An agency website built with Next.js to showcase multiple services, featuring SEO optimization with server-side rendering, semantic markup, JSON-LD structured data, and mobile-first accessibility. Designed for speed, high Core Web Vitals, and a modern user experience.",
-    image: "/projects/celebrino.png",
-    link: "https://celebrino.in",
-    tech: ["Next.js", "React", "Tailwind CSS", "SEO", "SSR"],
+    title: "Purevia Global",
+    description: "An end-to-end private label FMCG supply chain and export partner, bridging international brands with certified manufacturing.",
+    image: "/projects/pureviaglobal.png",
+    link: "https://www.pureviaglobal.in/",
   },
+ 
   {
-    title: "Job Portal",
-    image: "/projects/job-dekho.png",
-    description:
-      "Full-stack Job portal with employee and recruiter dashboard. Backend is hosted on Render (free tier), so it may experience cold starts.",
-    link: "https://jobdekho-dusky.vercel.app/",
+    title: "Social Cuts",
+    description: "A modern online scheduling and booking platform for salon and barber services, offering hassle-free appointment management.",
+    image: "/projects/socialcutz.png",
+    link: "https://socialcuts.vercel.app/",
   },
-  {
-    title: "Talk n Knock",
-    description:
-      "A podcast and blogging platform built with Next.js and Supabase, featuring SEO-focused architecture with server-side rendering, structured data, and semantic markup. Provides a fast, accessible, mobile-first experience with integrated blogs powered by Supabase backend.",
-    image: "/projects/talknknock.png",
-    link: "https://talknknock.com",
-    tech: ["Next.js", "React", "Tailwind CSS", "Supabase", "SEO", "SSR"],
-  },
+ 
 ];
