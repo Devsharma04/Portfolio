@@ -185,13 +185,13 @@ export default function Home() {
                 About Me
               </div>
               <h3 className="scroll-fade text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                Engineering premium web applications.
+                Engineering Premium Web Applications.
               </h3>
               <p className="scroll-fade text-neutral-400 leading-relaxed font-light">
                 I am a dedicated web developer with a strong foundation in JavaScript, React, and modern front-end ecosystems. My approach to development blends clean UI/UX with functional backend logic, ensuring seamless user experiences.
               </p>
               <p className="scroll-fade text-neutral-400 leading-relaxed font-light">
-                While learning, I also explored Next.js, which has become a core part of my workflow for building full-stack web apps. I&apos;m currently assisting a startup in building their platform from the ground up, applying real-world skills in a collaborative environment.
+                While learning, I also explored Next.js, which has become a core part of my workflow for building full-stack web apps. I also assisted a startup in building their platform from the ground up, applying real-world skills in a collaborative environment.
               </p>
               <p className="scroll-fade text-neutral-400 leading-relaxed font-light">
                 Currently focused on building projects and contributing to open-source while actively seeking new challenges in the tech industry.
