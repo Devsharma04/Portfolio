@@ -64,21 +64,21 @@ export const logos = [
 export const projects = [
   {
     title: "Parnika International",
-    description: "A premium export platform for Indian groceries, authentic spices, and FMCG brands, enabling seamless global trade.",
+
     image: "/projects/parnika.png",
     link: "https://www.parnikainternational.com/",
   },
  
   {
     title: "Purevia Global",
-    description: "An end-to-end private label FMCG supply chain and export partner, bridging international brands with certified manufacturing.",
+   
     image: "/projects/pureviaglobal.png",
     link: "https://www.pureviaglobal.in/",
   },
  
   {
     title: "Social Cuts",
-    description: "A modern online scheduling and booking platform for salon and barber services, offering hassle-free appointment management.",
+   
     image: "/projects/socialcutz.png",
     link: "https://socialcuts.vercel.app/",
   },
