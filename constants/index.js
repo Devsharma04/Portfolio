@@ -63,11 +63,37 @@ export const logos = [
 
 export const projects = [
   {
-    title: "Parnika International",
+    title: "Lehof",
 
-    image: "/projects/parnika.png",
-    link: "https://www.parnikainternational.com/",
+    image: "/projects/lehof.png",
+    link: "https://lehof.de/",
   },
+  {
+    title: "Heaven studio",
+
+    image: "/projects/heaven.png",
+    link: "https://www.heavenstudio.in/",
+  },
+  {
+    title: "Azimetri",
+
+    image: "/projects/azimetri.png",
+    link: "https://azimetri.com/",
+  },
+  {
+    title: "Auraa designs",
+   
+    image: "/projects/auraa.png",
+    link: "https://auraadesigns.com/",
+  },
+  {
+    title: "Aquila events",
+
+    image: "/projects/aquila.png",
+    link: "https://www.aquilaevents.in/",
+  },
+ 
+
  
   {
     title: "Purevia Global",

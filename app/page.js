@@ -3,7 +3,19 @@ import { useRef, useCallback, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Github, Linkedin, ExternalLink, Mail, Copy, Check, Code2, Sparkles, Terminal } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  ExternalLink,
+  Mail,
+  Copy,
+  Check,
+  Code2,
+  Sparkles,
+  Terminal,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { logos, projects } from "@/constants";
 import Image from "next/image";
 
@@ -13,7 +25,60 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const containerRef = useRef(null);
   const [copied, setCopied] = useState(false);
+const projectsRef = useRef(null);
+const [activeProject, setActiveProject] = useState(0);
 
+const scrollProjects = useCallback((direction) => {
+  const container = projectsRef.current;
+  if (!container) return;
+
+  const card = container.querySelector("[data-project-card]");
+  if (!card) return;
+
+  const gap = 24;
+  const scrollAmount = card.getBoundingClientRect().width + gap;
+
+  container.scrollBy({
+    left: direction * scrollAmount,
+    behavior: "smooth",
+  });
+}, []);
+
+const handleProjectsScroll = useCallback(() => {
+  const container = projectsRef.current;
+  if (!container) return;
+
+  const card = container.querySelector("[data-project-card]");
+  if (!card) return;
+
+  const gap = 24;
+  const cardWidth = card.getBoundingClientRect().width + gap;
+
+  const index = Math.round(container.scrollLeft / cardWidth);
+
+  setActiveProject(
+    Math.min(
+      Math.max(index, 0),
+      Math.max(projects.length - 1, 0)
+    )
+  );
+}, []);
+
+const goToProject = useCallback((index) => {
+  const container = projectsRef.current;
+  if (!container) return;
+
+  const card = container.querySelector("[data-project-card]");
+  if (!card) return;
+
+  const gap = 24;
+  const cardWidth = card.getBoundingClientRect().width + gap;
+
+  container.scrollTo({
+    left: index * cardWidth,
+    behavior: "smooth",
+  });
+}, []);
   // Mouse move handler for the dynamic GPU-accelerated spotlight
   const handleMouseMove = useCallback((e) => {
     if (!containerRef.current) return;
@@ -252,47 +317,255 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="scroll-fade group flex flex-col rounded-2xl bg-neutral-900/40 border border-neutral-800/40 overflow-hidden hover:border-purple-500/30 transition-all duration-300"
-              >
-                {/* Image Container */}
-                <div className="relative overflow-hidden aspect-video">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent" />
-                </div>
-                {/* Content */}
-                <div className="p-6 flex-grow flex flex-col justify-between space-y-6">
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors duration-200">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-neutral-400 leading-relaxed font-light">
-                      {project.description}
-                    </p>
-                  </div>
-                  <div className="pt-2 border-t border-neutral-800/60 flex items-center justify-between">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-purple-400 hover:text-purple-300 transition-colors duration-200"
-                    >
-                      Visit Site
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
+         {/* Project Carousel */}
+<div className="relative">
+
+  <div
+    ref={projectsRef}
+    onScroll={handleProjectsScroll}
+    className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 no-scrollbar"
+    style={{
+      scrollbarWidth: "none",
+      msOverflowStyle: "none",
+    }}
+  >
+    {projects.map((project, index) => (
+      <article
+        key={project.title}
+        data-project-card
+        className="
+          scroll-fade
+          group
+          flex-none
+          w-[88%]
+          sm:w-[68%]
+          md:w-[calc(50%-12px)]
+          lg:w-[calc(33.333%-16px)]
+          snap-start
+          rounded-2xl
+          bg-neutral-900/40
+          border
+          border-neutral-800/50
+          overflow-hidden
+          hover:border-purple-500/30
+          transition-colors
+          duration-300
+        "
+      >
+
+        {/* Project Image */}
+        <div className="relative aspect-video overflow-hidden bg-neutral-950">
+
+          <Image
+            src={project.image}
+            alt={`${project.title} website preview`}
+            fill
+            sizes="
+              (max-width: 640px) 88vw,
+              (max-width: 1024px) 68vw,
+              33vw
+            "
+            className="
+              object-cover
+              transition-transform
+              duration-500
+              group-hover:scale-[1.03]
+            "
+            priority={index < 3}
+          />
+
+          <div className="
+            absolute
+            inset-0
+            bg-gradient-to-t
+            from-neutral-950/80
+            via-transparent
+            to-transparent
+            pointer-events-none
+          " />
+
+        </div>
+
+        {/* Project Content */}
+        <div className="
+          p-5
+          sm:p-6
+          flex
+          min-h-[190px]
+          flex-col
+          justify-between
+          gap-6
+        ">
+
+          <div className="space-y-2.5">
+
+            <h3 className="
+              text-lg
+              font-bold
+              text-white
+              group-hover:text-purple-400
+              transition-colors
+              duration-200
+            ">
+              {project.title}
+            </h3>
+
+            <p className="
+              text-sm
+              text-neutral-400
+              leading-relaxed
+              font-light
+              line-clamp-3
+            ">
+              {project.description ||
+                "A modern web experience built with a focus on clean design, performance, and usability."}
+            </p>
+
           </div>
+
+          {/* Visit Button */}
+          <div className="
+            pt-4
+            border-t
+            border-neutral-800/60
+          ">
+
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit ${project.title}`}
+              className="
+                inline-flex
+                items-center
+                gap-1.5
+                text-xs
+                font-semibold
+                text-purple-400
+                hover:text-purple-300
+                transition-colors
+                duration-200
+              "
+            >
+              Visit Site
+
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+    ))}
+  </div>
+
+  {/* Carousel Controls */}
+  {projects.length > 1 && (
+    <div className="
+      flex
+      items-center
+      justify-between
+      gap-4
+      mt-2
+    ">
+
+      {/* Pagination */}
+      <div
+        className="flex items-center gap-2"
+        aria-label="Project carousel pagination"
+      >
+
+        {projects.map((project, index) => (
+          <button
+            key={project.title}
+            type="button"
+            onClick={() => goToProject(index)}
+            aria-label={`Go to ${project.title}`}
+            aria-current={
+              activeProject === index
+                ? "true"
+                : undefined
+            }
+            className={`
+              h-1.5
+              rounded-full
+              transition-all
+              duration-300
+              ${
+                activeProject === index
+                  ? "w-7 bg-purple-400"
+                  : "w-1.5 bg-neutral-700 hover:bg-neutral-500"
+              }
+            `}
+          />
+        ))}
+
+      </div>
+
+      {/* Previous / Next */}
+      <div className="flex items-center gap-2">
+
+        <button
+          type="button"
+          onClick={() => scrollProjects(-1)}
+          disabled={activeProject === 0}
+          aria-label="Previous projects"
+          className="
+            w-10
+            h-10
+            rounded-full
+            border
+            border-neutral-800
+            bg-neutral-900/60
+            text-neutral-400
+            hover:text-white
+            hover:border-neutral-700
+            disabled:opacity-30
+            disabled:pointer-events-none
+            transition-colors
+            duration-200
+            flex
+            items-center
+            justify-center
+          "
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+
+        <button
+          type="button"
+          onClick={() => scrollProjects(1)}
+          disabled={activeProject >= projects.length - 1}
+          aria-label="Next projects"
+          className="
+            w-10
+            h-10
+            rounded-full
+            border
+            border-neutral-800
+            bg-neutral-900/60
+            text-neutral-400
+            hover:text-white
+            hover:border-neutral-700
+            disabled:opacity-30
+            disabled:pointer-events-none
+            transition-colors
+            duration-200
+            flex
+            items-center
+            justify-center
+          "
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
+
+      </div>
+
+    </div>
+  )}
+
+</div>
         </div>
       </section>
 
