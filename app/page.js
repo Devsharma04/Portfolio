@@ -410,16 +410,6 @@ const goToProject = useCallback((index) => {
               {project.title}
             </h3>
 
-            <p className="
-              text-sm
-              text-neutral-400
-              leading-relaxed
-              font-light
-              line-clamp-3
-            ">
-              {project.description ||
-                "A modern web experience built with a focus on clean design, performance, and usability."}
-            </p>
 
           </div>
 
